@@ -23,6 +23,8 @@
 
 CircularBuffer *receiveBuffer;
 Led *led[10];
+char ledPins[] = {LED_BUILTIN,LED_BAR_1,LED_BAR_2,LED_BAR_3,LED_BAR_4,LED_BAR_5,LED_BAR_6,LED_BAR_7,LED_BAR_8,LED_BAR_9,LED_BAR_10 };
+char ledMap[] = { 1,5,2,3,4,6,7,8,9,10 };
 /*
 Led *led2;
 Led *led3;
@@ -43,22 +45,9 @@ void setup()
 	{
 		;
 	}
-	led[0] = new Led(LED_BUILTIN);
-
-	led[1] = new Led(LED_BAR_1);
-	led[2] = new Led(LED_BAR_2);
-	led[3] = new Led(LED_BAR_3);
-	led[4] = new Led(LED_BAR_4);
-	led[5] = new Led(LED_BAR_5);
-	led[6] = new Led(LED_BAR_6);
-	led[7] = new Led(LED_BAR_7);
-	led[8] = new Led(LED_BAR_8);
-	led[9] = new Led(LED_BAR_9);
-
 	ledPool = new LedPool();
-
-	ledPool->add(led[2], 1);
-
+	for (int i = 0; i < sizeof(ledPins); i++)
+		ledPool->add(new Led(ledPins[i]), ledMap[i]);
 }
 
 void loop()
