@@ -83,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CircularBuffer.h" />
+    <ClInclude Include="IGpio.h" />
+    <ClInclude Include="Led.h" />
+    <ClInclude Include="LedPool.h" />
     <ClInclude Include="__vm\.LedController.vsarduino.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
@@ -90,7 +93,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties arduino.upload.port="COM8" />
+      <UserProperties arduino.upload.port="COM9" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
